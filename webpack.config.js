@@ -163,9 +163,6 @@ module.exports = (env, argv) => {
       port: 4200,
       hot: isDev
     },
-    devtool: isDev ? 'source-map' : 'eval',
-    externals: {
-      jquery: 'jQuery'
-    }
+    devtool: isDev ? 'source-map' : 'eval'
   }
 }
