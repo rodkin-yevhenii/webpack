@@ -1,0 +1,111 @@
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: $font-primary;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.9rem;
+  line-height: 1.56em;
+  color: $color-secondary-dark;
+  transition: all .3s linear;
+  display: inline-block;
+  $link: &;
+  
+  &[data-title] {
+    position: relative;
+    
+    &::after {
+      content: attr(data-title);
+      white-space: nowrap;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
+      font-size: 0.88em;
+      margin-left: 1.2em;
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.6;
+    }
+  }
+  
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+  
+  svg, img {
+    display: block;
+    margin: 0 0.6em;
+    
+    &.icon--extra-lg {
+      margin: 0 0.3em;
+    }
+    
+    &:first-child {
+      margin-left: 0;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  
+  &:hover {
+    border-bottom-color: currentColor;
+  }
+  
+  &--primary {
+    color: $color-primary;
+    
+    .icon {
+      --iconColor: $color-primary;
+    }
+  }
+  
+  &--secondary {
+    color: $color-primary-dark;
+    
+    .icon {
+      --iconColor: $color-primary-dark;
+    }
+  }
+  
+  &--bold {
+    font-weight: 600;
+  }
+  
+  &--md {
+    font-size: 1.7rem;
+  }
+  
+  &--sm {
+    font-size: 1.4rem;
+  }
+  
+  &--bordered {
+    border-bottom: 1px dashed currentColor;
+    
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+  
+  &--icon-on-mobile {
+    #{$link} {
+      &__inner {
+        & > *:not(.icon) {
+          @media only screen and (max-width: $container-mobile-lg) {
+            display: none;
+          }
+        }
+        
+        .icon {
+          @media only screen and (max-width: $container-mobile-lg) {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

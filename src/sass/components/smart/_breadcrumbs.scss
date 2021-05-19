@@ -1,0 +1,49 @@
+.breadcrumbs {
+  color: $color-secondary-dark;
+  font-size: 1.5rem;
+  font-family: $font-primary;
+  line-height: 2.8rem;
+  font-weight: normal;
+  padding: 1.6rem 0;
+  
+  @media only screen and(max-width: $container-desktop-sm) {
+  
+  }
+  
+  @media only screen and (max-width: $container-tablet) {
+    display: none;
+  }
+  
+  ul {
+    li {
+      display: inline;
+      
+      &:not(:first-child) {
+        &::before {
+          content: '/';
+          display: inline-block;
+          color: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+          font-family: inherit;
+          padding: 0 0.2em;
+        }
+      }
+      
+      a {
+        text-decoration: none;
+      }
+      
+      a, span {
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+      }
+      
+      .active, span {
+        color: $color-grey-dark;
+      }
+    }
+  }
+}

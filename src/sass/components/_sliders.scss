@@ -1,0 +1,54 @@
+.slider {
+  &__item {
+    padding: 1.6rem 1.6rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    
+    @media only screen and (max-width: $container-desktop-sm) {
+      padding: 1rem 1.6rem;
+    }
+  
+    @media only screen and (max-width: $container-tablet) {
+      padding: 1rem 0.8rem;
+    }
+  }
+  
+  .slick-track {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .slick-list {
+    //margin: 0 -1.6rem;
+    //padding: 0 1.6rem;
+    width: auto;
+    
+    @media only screen and (max-width: $container-tablet) {
+      //margin: 0 -0.8rem;
+      //padding: 0 0.8rem;
+    }
+  }
+  
+  .slick-active {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    
+  }
+  
+  .btn-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba($color-grey-light, 0.7);
+    
+    &--left {
+      left: 1rem;
+    }
+    
+    &--right {
+      right: 1rem;
+    }
+  }
+}

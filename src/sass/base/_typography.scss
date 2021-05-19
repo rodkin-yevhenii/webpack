@@ -1,0 +1,258 @@
+%title {
+  display: flex;
+  align-items: center;
+  font-family: $font-secondary;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  color: $color-secondary-dark;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.heading {
+  $heading: &;
+  @extend %title;
+  text-transform: uppercase;
+  
+  &:not(:last-child) {
+    margin: 0 0 1.4rem;
+    
+    @media only screen and(max-width: $container-tablet-sm) {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  &__inner {
+    position: relative;
+    display: inline-block;
+    padding: 0 5rem 1rem 0;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: block;
+      height: 0.2rem;
+      background: $color-primary;
+    }
+  
+    &--sm {
+      &::before {
+        width: 50%;
+        @media only screen and(max-width: $container-tablet) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  small {
+    font-size: 0.72em;
+  }
+  
+  &__icon {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-right: 2rem;
+    align-self: center;
+  }
+  
+  
+  &--lg {
+    font-size: 5.4rem;
+    font-weight: 500;
+  
+    @media only screen and(max-width: $container-tablet) {
+      font-size: 4rem;
+    }
+  
+    @media only screen and(max-width: $container-mobile-lg) {
+      font-size: 3.6rem;
+    }
+  }
+  
+  &--md {
+    font-size: 3.3rem;
+    
+    @media only screen and(max-width: $container-tablet) {
+      font-size: 2.8rem;
+    }
+  }
+  
+  &--sm {
+    font-size: 2.4rem;
+  }
+  
+  &--primary {
+    text-transform: uppercase;
+  }
+  
+  &--secondary {
+    text-transform: none;
+  }
+  
+  &--blue {
+    color: $color-primary;
+  }
+  
+  &--white {
+    color: $color-white;
+  }
+  
+  &--center {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  &--mb-lg {
+    &:not(:last-child) {
+      margin: 0 0 6.4rem;
+      
+      @media only screen and(max-width: $container-tablet-sm) {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+  
+  
+  &--mb-none {
+    margin-bottom: 0;
+  }
+}
+
+.subheading {
+  @extend %title;
+  font-size: 2.5rem;
+  
+  @media only screen and(max-width: $container-tablet) {
+    font-size: 2.1rem;
+  }
+  
+  &:not(:last-child) {
+    margin: 0 0 2rem;
+    
+    @media only screen and(max-width: $container-tablet-sm) {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  &--md {
+    font-size: 2rem;
+    
+    @media only screen and(max-width: $container-tablet-sm) {
+    
+    }
+    
+  }
+  
+  &--sm {
+    font-size: 1.8rem;
+    text-transform: none;
+    font-family: $font-primary;
+    font-weight: 600;
+    font-style: normal;
+    
+    @media only screen and(max-width: $container-tablet-sm) {
+    
+    }
+  }
+  
+  &--center {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  &__icon {
+    font-size: 2.44em;
+    line-height: 1;
+    margin-right: 3.2rem;
+    align-self: center;
+    flex-shrink: 0;
+  }
+  
+  &__inner {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 1rem 0;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 10rem;
+      display: block;
+      height: 0.2rem;
+      background: $color-primary;
+    }
+  }
+  
+  &-list {
+    & > [class~='subheading'] {
+      &:not(:last-child) {
+        margin-bottom: 4.8rem;
+      }
+    }
+  }
+}
+
+.text {
+  font-family: $font-primary;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.9rem;
+  line-height: 1.57em;
+  
+  
+  @media only screen and(max-width: 992px) {
+    
+  }
+  
+  &:not(:last-child) {
+    margin: 0 0 2rem;
+    
+    @media only screen and(max-width: $container-tablet-sm) {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  &--sm {
+    font-size: 1.5rem;
+    
+    @media only screen and(max-width: 992px) {
+      
+    }
+  }
+  
+  &--primary {
+    color: $color-secondary-dark;
+  }
+  
+  &--secondary {
+    color: $color-white;
+  }
+  
+  &--bold {
+    font-weight: 600;
+  }
+  
+  &--center {
+    text-align: center;
+  }
+  
+  &--mb-md {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  &--mb-sm {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

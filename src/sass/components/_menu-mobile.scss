@@ -1,0 +1,210 @@
+.menu-mobile {
+  $menu: &;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 8rem;
+  height: calc(100% - 8rem);
+  width: 100%;
+  background: rgba(255 ,255, 255, 0.22);
+  overflow: hidden;
+  z-index: 99;
+  transition: opacity .3s linear, transform .3s linear;
+  display: none;
+  opacity: 0;
+  transform: translateX(-120%);
+  
+  @media only screen and (max-width: $container-mobile-lg){
+    top: 6.8rem;
+    height: calc(100% - 6.8rem);
+  }
+  
+  &.open {
+    opacity: 1;
+    box-shadow: 0 4px 20px rgba(48, 96, 154, 0.1);
+    transform: translateX(0);
+  }
+  
+  &__close {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    position: absolute;
+    z-index: 100;
+    right: 1.8rem;
+    top: 2.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2.4rem;
+    opacity: .6;
+    
+    .icon {
+      display: flex;
+    }
+  }
+
+
+  &__inner {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__content {
+    min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    background: $color-white;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    padding: 0;
+    position: relative;
+  }
+
+  &__logo {
+    margin: 4rem auto 4rem 0;
+    width: 106px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  
+  &__nav {
+    padding: 3.2rem 1.6rem;
+    width: 30.6rem;
+    overflow: auto;
+  
+    @media only screen and (max-width: $container-tablet-sm){
+      border: none;
+      width: 100%;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+    }
+  }
+  
+  &__languages {
+    padding: 1.6rem 1.6rem;
+    margin: 1.6rem 0 0;
+    
+    @media only screen and (max-width: $container-tablet-sm){
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+    }
+  }
+  
+  .nav {
+    display: block;
+    text-align: left;
+    
+    &__sub {
+      top: 0;
+      right: 0;
+      transform: none;
+      left: auto;
+      box-shadow: none;
+      height: 100%;
+      max-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: calc(100% - 30.6rem);
+      max-width: unset;
+      padding: 3.2rem 3.2rem;
+  
+      @media only screen and (max-width: $container-tablet-sm){
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: auto;
+        bottom: auto;
+        transition: max-height .48s linear;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        max-height: 0;
+        padding: 0;
+      }
+  
+      & > ul {
+        @media only screen and (max-width: $container-tablet-sm){
+          padding: 2rem 0 2rem 2rem;
+        }
+        
+        & > li {
+          padding: 0;
+          & > a {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    ul {
+      display: block;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 3.2rem;
+        position: static;
+        cursor: pointer;
+        
+        @media only screen and (max-width: $container-tablet-sm){
+          flex-wrap: wrap;
+        }
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .visible-submenu {
+      
+      & > .btn {
+        color: $color-white;
+        background: $color-primary;
+        border-color: $color-primary;
+        --iconColor: $color-primary;
+  
+        @media only screen and (max-width: $container-tablet-sm){
+          transform: rotate(-90deg);
+        }
+      }
+      
+      .nav__sub {
+        @media only screen and (max-width: $container-tablet-sm){
+          max-height: 800vh;
+          transition: max-height 1s linear;
+        }
+      }
+    }
+    
+    .btn {
+      @media only screen and (max-width: $container-tablet-sm){
+        position: relative;
+        transform: rotate(90deg);
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding: 0;
+
+      &:not(:first-child){
+        margin: 0;
+      }
+    }
+  }
+}

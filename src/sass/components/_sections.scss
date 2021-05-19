@@ -1,0 +1,525 @@
+.section {
+  padding: 12rem 0;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  $section: &;
+
+  @media only screen and(max-width: $container-desktop-lg) {
+    padding: 10rem 0;
+  }
+
+  @media only screen and(max-width: $container-tablet) {
+    padding: 7rem 0;
+  }
+
+  @media only screen and(max-width: $container-tablet-sm) {
+    padding: 5rem 0;
+  }
+
+  &:first-child, &:first-of-type {
+    padding-top: 0;
+
+    #{$section} {
+      &__overlay {
+        top: -4rem;
+      }
+    }
+  }
+
+  &--white {
+    background-color: $color-white;
+  }
+
+  &--grey {
+    background-color: $color-grey-light;
+  }
+
+  &-info {
+    &:first-child, &:first-of-type {
+      padding-top: 12rem;
+
+      @media only screen and(max-width: $container-desktop-lg) {
+        padding-top: 10rem;
+      }
+
+      @media only screen and(max-width: $container-tablet) {
+        padding-top: 7rem;
+      }
+
+      @media only screen and(max-width: $container-tablet-sm) {
+        padding-top: 5rem;
+      }
+    }
+  }
+
+  &-callback {
+    background-image: url("../../img/callback.png");
+    background-position: bottom;
+    background-size: contain;
+
+    @media only screen and(max-width: $container-mobile-lg) {
+
+      background-image: url("../../img/callback-mobile.png");
+    }
+  }
+
+  &-contacts {
+    flex: 1;
+    background-size: contain;
+    background-position: bottom;
+    background-image: url("../../img/callback.png");
+
+    @media only screen and(max-width: $container-mobile-lg) {
+      background-position: bottom;
+      background-size: contain;
+      background-image: url("../../img/callback-mobile.png");
+    }
+
+    .head {
+      margin-bottom: 0;
+      background-image: none;
+      background-color: transparent;
+    }
+  }
+
+  &-item {
+    padding: 14rem 0 4rem;
+    min-height: 48rem;
+
+    &:first-child, &:first-of-type {
+      padding-top: 14rem;
+
+      @media only screen and(max-width: $container-mobile-lg) {
+        padding-top: 11.6rem;
+      }
+    }
+
+    @media only screen and(max-width: $container-desktop-sm) {
+      min-height: 36.8rem;
+    }
+
+    @media only screen and(max-width: $container-mobile-lg) {
+      min-height: unset;
+      padding: 11.6rem 0 0;
+    }
+  }
+
+  &__overlay, &__figure {
+    position: absolute;
+    top: 17rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media only screen and(max-width: $container-desktop-lg) {
+      top: 15rem;
+    }
+
+    @media only screen and(max-width: $container-tablet) {
+      top: 12rem;
+    }
+
+    @media only screen and(max-width: $container-tablet-sm) {
+      top: 10rem;
+    }
+
+    @media only screen and(max-width: $container-mobile-lg) {
+      display: none;
+    }
+
+    span {
+      display: block;
+      height: 0;
+      position: relative;
+    }
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  &__overlay {
+    width: 60.8rem;
+
+    span {
+      padding: 0 0 100%;
+    }
+
+    &--left {
+      background-image: url("../../img/section-overlay-left.png");
+    }
+
+    &--right {
+      background-image: url("../../img/section-overlay-right.png");
+    }
+
+
+    @media only screen and(max-width: $container-desktop-lg) {
+      width: 45.6rem;
+    }
+
+    @media only screen and(max-width: $container-tablet) {
+      width: 38rem;
+    }
+  }
+
+  &__figure {
+    width: 30.4vw;
+    background-image: url("../../img/section-figure.png");
+    top: 30rem;
+
+    @media only screen and(max-width: $container-tablet) {
+      width: 48vw;
+      top: 24rem;
+    }
+
+    span {
+      padding: 0 0 80.65%;
+    }
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+
+    &-overlay {
+      position: absolute;
+      top: 50%;
+      left: -8%;
+      transform: translate(8%, -50%);
+      width: 100%;
+      max-width: 48rem;
+      background-image: url("../../img/bg-subtitle.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media only screen and(max-width: $container-tablet) {
+        left: 8%;
+        top: 80%;
+        transform: translate(-8%, -50%);
+      }
+
+      span {
+        position: relative;
+        display: block;
+        height: 0;
+        padding: 0 0 100%;
+      }
+    }
+
+    &-number {
+      flex-shrink: 0;
+      font-size: 12rem;
+      line-height: 0.73em;
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 500;
+      text-align: right;
+      text-transform: uppercase;
+      color: $color-primary;
+      width: 0.42em;
+      position: relative;
+      z-index: 2;
+
+      @media only screen and(max-width: $container-tablet) {
+        font-size: 9rem;
+      }
+    }
+
+    &-title {
+      padding-left: 3.2rem;
+      padding-right: 2rem;
+      position: relative;
+      z-index: 2;
+
+      @media only screen and(max-width: $container-mobile-lg) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__cards {
+    padding: 0 18.3rem;
+
+    @media only screen and(max-width: $container-desktop-lg) {
+      padding: 0 12.2rem;
+    }
+
+    @media only screen and(max-width: $container-desktop-sm) {
+      padding: 0 4.5rem;
+    }
+
+    @media only screen and(max-width: $container-tablet) {
+      padding: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+
+    @media only screen and(max-width: $container-tablet) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &--desktop-sm-full {
+      @media only screen and(max-width: $container-desktop-sm) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__aside {
+    flex-shrink: 0;
+    width: 44.8rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &:not([class*="secondary"]) {
+      @media only screen and(max-width: $container-desktop-lg) {
+        width: 35.2rem;
+      }
+
+      @media only screen and(max-width: $container-desktop-sm) {
+        width: 35.2rem;
+      }
+
+      @media only screen and(max-width: $container-tablet) {
+        width: 100%;
+      }
+    }
+
+    @media only screen and(max-width: $container-desktop-sm) {
+      width: 36.8rem;
+    }
+
+    @media only screen and(max-width: $container-tablet) {
+      width: 100%;
+    }
+
+    &--desktop-sm-full:not([class*="secondary"]) {
+      @media only screen and(max-width: $container-desktop-sm) {
+        width: 100%;
+      }
+    }
+
+    &-overlay {
+      position: absolute;
+      top: -16%;
+      left: 0;
+      width: 100%;
+      max-width: 48rem;
+      background-image: url("../../img/aside-overlay.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media only screen and(max-width: $container-tablet) {
+        display: none;
+      }
+
+      span {
+        position: relative;
+        display: block;
+        height: 0;
+        padding: 0 0 65.84%;
+      }
+    }
+
+    .img {
+      @media only screen and(max-width: $container-tablet) {
+        width: 35.2rem;
+      }
+
+      @media only screen and(max-width: $container-mobile-lg) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    padding-left: 15.2rem;
+    position: relative;
+    z-index: 2;
+
+    @media only screen and(max-width: $container-desktop-lg) {
+      padding-left: 12.8rem;
+    }
+
+    @media only screen and(max-width: $container-desktop-sm) {
+      padding-left: 4.8rem;
+    }
+
+    @media only screen and(max-width: $container-tablet) {
+      padding: 3.2rem 0 0;
+    }
+
+    &--desktop-sm-full {
+      @media only screen and(max-width: $container-desktop-sm) {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__controls {
+    z-index: 10;
+    margin-left: auto;
+    margin-right: 0;
+
+    &-group {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+
+  &__text {
+    padding-right: 13.2rem;
+
+    @media only screen and(max-width: $container-desktop-lg) {
+      padding-right: 6rem;
+    }
+
+    @media only screen and(max-width: $container-tablet) {
+      padding: 0;
+      text-align: center;
+    }
+
+  }
+
+  &__slider {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    margin: -4rem 0 0;
+
+    .slider {
+      position: relative;
+      margin: 0 -1.6rem;
+
+      @media only screen and(max-width: $container-desktop-sm) {
+        margin: 0 -0.8rem;
+      }
+    }
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .heading {
+
+
+      &:not(:last-child){
+        margin: 0 0 8.8rem;
+
+        @media only screen and(max-width: $container-desktop-lg) {
+          margin: 0 0 7.2rem;
+        }
+
+        @media only screen and(max-width: $container-mobile-lg) {
+          margin-bottom: 6.4rem;
+        }
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    p {
+      &:not(:last-child){
+        margin-bottom: 3.2rem;
+      }
+    }
+
+    &-head {
+      @media only screen and(max-width: $container-mobile-lg) {
+        margin-top: 3.6rem;
+      }
+
+      &:not(:last-child){
+        margin-bottom: 13.6rem;
+
+        @media only screen and(max-width: $container-desktop-lg) {
+          margin-bottom: 5.6rem;
+        }
+
+        @media only screen and(max-width: $container-mobile-lg) {
+          margin-bottom: 6.4rem;
+        }
+      }
+    }
+
+    &-footer {
+
+      ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media only screen and(max-width: $container-mobile-lg) {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        &:not(:first-child){
+          margin-top: 6.2rem;
+        }
+
+        li {
+          margin: 1.5rem 4.5rem;
+          display: inline-block;
+          vertical-align: middle;
+
+          @media only screen and(max-width: $container-desktop-sm) {
+            margin: 1.6rem 1.6rem;
+          }
+
+          @media only screen and(max-width: $container-mobile-lg) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 0 1.6rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          a {
+            color: $color-primary;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color .2s linear;
+
+            &:hover {
+              color: $color-secondary-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+}

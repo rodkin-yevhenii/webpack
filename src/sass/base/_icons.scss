@@ -1,0 +1,43 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
+  vertical-align: middle;
+  
+  &--extra-lg {
+    font-size: 2em;
+  }
+  
+  &--md {
+    font-size: 0.8em;
+  }
+  
+  &--sm {
+    font-size: 0.6em;
+  }
+  
+  &--inverted {
+    position: relative;
+    transform: rotateY(180deg);
+  }
+  
+  &--primary {
+    color: $color-primary;
+  }
+  
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  &--pointer {
+    font-size: 1.16em;
+  }
+}

@@ -1,0 +1,58 @@
+// Colors
+
+$color-primary: #4586E8;
+$color-primary-dark: #444444;
+$color-secondary-dark: #343434;
+$color-grey-light: #F2F5F8;
+$color-grey-light2: #F2EDF7;
+$color-grey-light3: #F2F5F8;
+$color-grey-light4: #DDDDDD;
+$color-grey-lighter: #F2F2F2;
+$color-grey-lighter2: #EEF0F4;
+$color-grey-lighter3: #E8EEF3;
+$color-grey-dark: #999999;
+$color-grey-dark2: #74798A;
+$color-grey-dark3: #A5A5A5;
+$color-black-2: #222222;
+$color-orange-dark: #E30613;
+$color-orange-light: #F39200;
+$color-yellow: #FFF449;
+$color-yellow-2: #fff705;
+$color-blue: #36A9E1;
+$color-dark-blue: #30609A;
+$color-darker-blue: #2E6BC6;
+$color-darker-blue2: #073873;
+$color-white: #fff;
+$color-red: #E53935;
+$color-green: #01981b;
+
+$gradient-primary: linear-gradient(90deg, #E30613 0%, #F39200 100%);
+$gradient-secondary: linear-gradient(90deg, #36A9E1 0%, #2FAC66 100%);
+
+// Font
+
+$font-lato: 'Lato', sans-serif;
+$font-montserrat: 'Montserrat', Arial, sans-serif;
+$font-oswald: 'Oswald', sans-serif;
+$font-openSans: 'Open Sans', sans-serif;
+$font-inter: 'Inter', sans-serif;
+$font-firaSans: 'Fira Sans Condensed', sans-serif;
+$font-firaSansExtra: 'Fira Sans Extra Condensed', sans-serif;
+
+$font-primary         : #{$font-inter};
+$font-secondary         : #{$font-firaSans};
+$font-size            : 1rem;
+$font-weight          : normal;
+$font-style           : normal;
+$font-line-height     : 1.64;
+
+//Grid
+$container-desktop-lg:  1700px;
+$container-desktop-md:  1320px;
+$container-desktop-sm:  1260px;
+$container-tablet:  1023px;
+$container-tablet-sm:  767px;
+$container-mobile-lg:  560px;
+
+$offset                  : 3rem;
+$offset-mobile           : 3rem;

@@ -1,0 +1,340 @@
+.card {
+  $card: &;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+  text-decoration: none;
+  border-radius: .4rem;
+  transition: all .2s linear;
+  min-height: 100%;
+  background-color: $color-white;
+  color: $color-primary-dark;
+  position: relative;
+  outline: none;
+  
+  &:hover, &:active, &:focus {
+    outline: none;
+    border: none;
+  }
+  
+  &--primary {
+    border-radius: .4rem;
+    overflow: hidden;
+    color: $color-white;
+  
+    &:hover {
+  
+      @media only screen and (min-width: $container-desktop-sm + 1) {
+        #{$card} {
+          &__overlay {
+            background: rgba(#1E5FD0, 0.85);
+      
+            &-inner {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &--secondary {
+    padding: 2rem 2rem 1rem;
+    
+    @media only screen and(max-width: $container-desktop-sm) {
+      padding: 0 0;
+    }
+  }
+  
+  &--image {
+    
+    #{$card} {
+  
+      &__overlay {
+        &-inner {
+          padding: 1.6rem;
+        }
+      }
+      
+      &__bg {
+        padding: 0 0 142.4%;
+        
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  
+  &--default {
+    color: $color-secondary-dark;
+    
+    &:hover {
+      color: $color-primary;
+    }
+    
+    #{$card} {
+    
+      &__overlay {
+        &-inner {
+        
+        }
+      }
+    
+      &__bg {
+        padding: 0 0 82.92%;
+      
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  
+  &--mobile-wide {
+    #{$card} {
+    
+      &__overlay {
+        &-inner {
+          @media only screen and (max-width: $container-tablet-sm){
+            display: none;
+          }
+        }
+      }
+      
+      &__title {
+        @media only screen and (max-width: $container-tablet-sm){
+          margin: auto;
+        }
+      }
+    
+      &__bg {
+        padding: 0 0 139.2%;
+        
+        @media only screen and (max-width: $container-tablet-sm){
+          padding: 0 0 36%;
+          flex: auto;
+        }
+      }
+    }
+  }
+  
+  &--mobile-center {
+    @media only screen and(max-width: 599px) {
+      text-align: center;
+    }
+  }
+  
+  &__inner {
+    display: flex;
+    //flex: 1;
+    flex-direction: column;
+    text-decoration: none;
+    //min-height: 100%;
+    position: relative;
+    z-index: 2;
+    border-radius: .4rem;
+    overflow: hidden;
+  }
+  
+  &__bg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 0;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  
+    &::after {
+      content: '';
+      width: 100%;
+      max-height: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 56.19%, #000000 81.12%);
+      opacity: 0.6;
+    }
+  }
+  
+  &__overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 2.4rem 3.8rem;
+    background: transparent;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+    transition: all .2s ease-in;
+    
+    &:last-child {
+      flex: 1;
+    }
+  
+    @media only screen and(max-width: $container-desktop-md) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  
+    @media only screen and(max-width: $container-tablet) {
+      padding: 3rem 1.6rem;
+    }
+    
+    &-inner {
+      opacity: 0;
+      transform: translateY(10%);
+      position: relative;
+      transition: all .2s .2s ease-in;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+  
+  &__image {
+    height: 0;
+    position: relative;
+    padding: 0 0 109.14%;
+    overflow: hidden;
+    border-radius: 4px;
+    flex-shrink: 0;
+    
+    &-1x1 {
+      padding: 0 0 100%;
+    }
+    
+    & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .36s linear;
+    }
+  }
+  
+  &__icon {
+    align-self: center;
+    margin: auto;
+    font-size: 4rem;
+    
+    &--lg {
+      font-size: 6rem;
+    }
+  }
+  
+  &__content {
+    padding: 1.6rem 0 0;
+  }
+  
+  &__title {
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 1.58em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    transition: all .3s;
+    color: $color-secondary-dark;
+    margin-top: auto;
+    text-transform: uppercase;
+    
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+    
+    @media only screen and(max-width: $container-tablet) {
+      font-size: 2.1rem;
+    }
+    
+    &--sm {
+      font-size: 1.7rem;
+    }
+    
+    &--left {
+      text-align: left;
+    }
+    
+    &--center {
+      text-align: center;
+    }
+    
+    &--secondary {
+      color: $color-white;
+    }
+    
+  }
+  
+  &__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.9rem;
+    line-height: 1.56em;
+    color: inherit;
+  }
+  
+  &__part-number {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba($color-primary-dark, 0.5);
+    margin: 0 0 .4rem;
+  }
+  
+  &__price {
+    font-size: 1.7rem;
+    line-height: 2.8rem;
+  }
+  
+  &__list {
+    list-style: disc;
+    color: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.8rem;
+  
+    @media only screen and(max-width: $container-tablet) {
+      font-size: 1.5rem;
+    }
+    
+    li {
+      list-style: inherit;
+      
+      &:not(:last-child) {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+}

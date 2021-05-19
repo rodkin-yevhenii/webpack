@@ -1,0 +1,36 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  width: auto;
+  font-family: $font-firaSansExtra;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 1;
+  text-transform: capitalize;
+  color: $color-grey-dark2;
+  
+  &--secondary {
+    color: $color-white;
+  }
+  
+  &__img {
+    width: 5rem;
+    flex-shrink: 0;
+  }
+  
+  &__text {
+    display: inline-block;
+    margin-left: 1.2rem;
+    white-space: nowrap;
+  }
+  
+  img, svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}

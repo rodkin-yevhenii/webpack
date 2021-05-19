@@ -1,0 +1,68 @@
+.table-container, .wp-block-table {
+  overflow-y: hidden;
+  overflow-x: auto;
+  max-width: 100%;
+  font-size: 1.6rem;
+  line-height: 1.48;
+  margin: 4rem 0;
+  padding: 0 0 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  
+  table {
+    width: 100%;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    border: 1px solid $color-grey-lighter2;
+    border-collapse: collapse;
+    min-width: 48rem;
+    align-self: flex-start;
+    justify-self: flex-start;
+    
+    thead {
+      vertical-align: baseline;
+    
+      tr {
+        background: $color-grey-light;
+      }
+    
+      td, th {
+        font-weight: 700;
+        text-align: left;
+      }
+    }
+  
+    tbody {
+      tr {
+        background: $color-white;
+      }
+    
+      td {
+      }
+    }
+  
+    td, th {
+      padding: 2rem 2rem;
+      font-weight: normal;
+      color: $color-secondary-dark;
+      border: 1px solid $color-grey-lighter2;
+      
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  
+  figcaption {
+    width: 100%;
+    margin: 1rem 0 0;
+    text-align: left;
+    color: $color-grey-dark;
+    align-self: flex-start;
+    justify-self: flex-start;
+  }
+}

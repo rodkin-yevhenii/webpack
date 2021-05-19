@@ -1,0 +1,337 @@
+%btn-default {
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  text-decoration: none;
+  padding: 1.2rem 3.2rem;
+  display: inline-flex;
+  border-radius: 4px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 4.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  font-family: $font-primary;
+  transition: all .3s ease-out;
+  font-weight: 600;
+  font-style: normal;
+  min-width: 16rem;
+  max-width: 100%;
+  user-select: none;
+  
+  @media only screen and (max-width: $container-mobile-lg) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+  
+  & > * {
+    pointer-events: none;
+  }
+  
+  .icon {
+    margin: 0 0.6em;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    @extend %btn-default;
+  }
+  
+  &--primary {
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-primary;
+      color: $color-white;
+      --iconColor: $color-white;
+      
+      &:hover {
+  
+        @media only screen and (min-width: $container-desktop-sm + 1) {
+          background-color: $color-darker-blue;
+          --iconColor: $color-white;
+        }
+        
+      }
+      
+      &:active {
+        background-color: $color-primary;
+        --iconColor: $color-white;
+      }
+    }
+  }
+  
+  &--secondary {
+    &,
+    &:link,
+    &:visited {
+      color: $color-primary;
+      background: $color-white;
+      --iconColor: $color-primary;
+      
+      &:hover {
+  
+        @media only screen and (min-width: $container-desktop-sm + 1) {
+          color: $color-white;
+          background-color: $color-primary;
+          --iconColor: $color-primary;
+        }
+        
+      }
+      
+      &:active {
+        color: $color-white;
+        background-color: $color-primary;
+        --iconColor: $color-primary;
+      }
+    }
+  }
+  
+  &--bordered {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid rgba($color-primary, 0.5);
+      color: $color-primary;
+      background: $color-white;
+      --iconColor: $color-darker-blue;
+      
+      &:hover {
+        @media only screen and (min-width: $container-desktop-sm + 1) {
+          color: $color-white;
+          background-color: $color-darker-blue;
+          border-color: $color-darker-blue;
+          --iconColor: $color-darker-blue;
+        }
+      }
+      
+      &:active {
+        color: $color-white;
+        background-color: $color-primary;
+        border-color: $color-primary;
+        --iconColor: $color-darker-blue;
+      }
+    }
+  }
+  
+  &--square {
+    &,
+    &:link,
+    &:visited {
+      width: 4rem;
+      height: 4rem;
+      padding: 1.2rem 1.2rem;
+      min-width: unset;
+      flex-shrink: 0;
+    }
+    
+    &-sm {
+      &,
+      &:link,
+      &:visited {
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 0.2rem 0.2rem;
+        min-width: unset;
+        flex-shrink: 0;
+        font-size: 0.68em;
+      }
+    }
+  }
+  
+  &--disabled, &:disabled {
+    
+    color: $color-white;
+    background: $color-grey-dark;
+    --iconColor: $color-white;
+    
+    &:hover, &:active, &:focus {
+      color: $color-white;
+      background: $color-grey-dark;
+      --iconColor: $color-white;
+    }
+  }
+  
+}
+
+.btn-menu {
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  font-size: 3rem;
+  display: inline-block;
+  position: relative;
+  z-index: 100;
+  width: 1em;
+  height: .72em;
+  border: none;
+  padding: 0;
+  background: transparent;
+  line-height: 0.6;
+  text-align: center;
+  user-select: none;
+  
+  > span {
+    display: inline-block;
+    position: relative;
+    height: .3rem;
+    width: 80%;
+    border-radius: .2rem;
+    background: $color-primary;
+    vertical-align: middle;
+    
+    &::before, &::after {
+      display: inline-block;
+      position: absolute;
+      content: "";
+      height: .3rem;
+      border-radius: .2rem;
+      background: $color-primary;
+      transition: all 200ms;
+      width: 120%;
+    }
+    
+    &::before {
+      top: -0.26em;
+      right: 0;
+    }
+    
+    &::after {
+      top: 0.26em;
+      right: 0;
+    }
+  }
+  
+  &:focus {outline: none}
+  
+  &:hover > span:after, &:hover > span:before {
+    width: 100%;
+    left: 0;
+  }
+  
+  &.active {
+    & > span {
+      height: 0;
+      
+      &::after, &::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      
+      &::after {
+        transform: rotate(-45deg);
+      }
+      
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.btn-icon {
+  font-size: 2.4rem;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  text-decoration: none;
+  padding: 0.1em 0.1em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+  background-color: transparent;
+  user-select: none;
+  
+  &__badge {
+    position: relative;
+    right: 0.9em;
+    margin-right: -0.9em;
+    top: -0.9em;
+    font-size: 0.56em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 1.84em;
+    min-width: 1.84em;
+    padding: 0.1em;
+    border-radius: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: $color-white;
+    background-color: $color-primary;
+    flex-shrink: 0;
+    transition: all .2s;
+    opacity: 1;
+    
+    &:empty {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  &[data-toggle-menu] {
+    color: $color-primary-dark;
+    --iconColor: $color-primary-dark;
+    
+    .icon {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.btn-to-top {
+  position: fixed;
+  bottom: 8rem;
+  right: 4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s;
+  z-index: 100;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  background-color: $color-white;
+  box-shadow: 0 0 40px rgba(27, 55, 88, 0.15);
+  border-radius: 8px;
+  user-select: none;
+  
+  .icon {
+    position: relative;
+    transform: rotate(-90deg);
+  }
+  
+  @media only screen and (max-width: $container-tablet-sm){
+    bottom: 6.6rem;
+    right: 2rem;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  
+  &.visible {
+    pointer-events: initial;
+    opacity: 1;
+  }
+}

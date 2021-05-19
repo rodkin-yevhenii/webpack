@@ -1,0 +1,90 @@
+.u-mobile {
+  &-hidden {
+    @media screen and (max-width: $container-tablet-sm) {
+      display: none !important;
+    }
+  }
+  
+  &-visible {
+    @media screen and (min-width: $container-tablet-sm + 1) {
+      display: none !important;
+    }
+  }
+}
+
+.u-mobile-sm {
+  &-hidden {
+    @media screen and (max-width: $container-mobile-lg) {
+      display: none !important;
+    }
+  }
+  
+  &-visible {
+    @media screen and (min-width: $container-mobile-lg + 1) {
+      display: none !important;
+    }
+  }
+}
+
+.u-desktop-lg {
+  &-hidden {
+    @media screen and (max-width: $container-desktop-lg) {
+      display: none !important;
+    }
+  }
+  
+  &-visible {
+    @media screen and (min-width: $container-desktop-lg + 1) {
+      display: none !important;
+    }
+  }
+}
+.u-desktop-md {
+  &-hidden {
+    @media screen and (max-width: $container-desktop-md) {
+      display: none !important;
+    }
+  }
+  
+  &-visible {
+    @media screen and (min-width: $container-desktop-md + 1) {
+      display: none !important;
+    }
+  }
+}
+.u-desktop-sm {
+  &-hidden {
+    @media screen and (max-width: $container-desktop-sm) {
+      display: none !important;
+    }
+  }
+  
+  &-visible {
+    @media screen and (min-width: $container-desktop-sm + 1) {
+      display: none !important;
+    }
+  }
+}
+
+.u-tablet {
+  &-hidden {
+    @media screen and (max-width: $container-tablet) {
+      display: none !important;
+    }
+  }
+  
+  &-visible {
+    @media screen and (min-width: $container-tablet + 1) {
+      display: none !important;
+    }
+  }
+}
+
+
+.u-linebreak {
+  &-mobile {
+    @media screen and (min-width: $container-mobile-lg + 1) {
+      display: none !important;
+    }
+  }
+}
